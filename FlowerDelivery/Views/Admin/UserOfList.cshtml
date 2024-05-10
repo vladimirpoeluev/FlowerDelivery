@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_AdminLayout";
+}
+
+@using MigrationDataBase.Records;
+@model MigrationDataBase.Records.User[]
+
+<div>
+    <ul>
+        @foreach (MigrationDataBase.Records.User user in Model)
+        {
+            <li>@user.Name</li>
+        }
+    </ul>
+    
+</div>

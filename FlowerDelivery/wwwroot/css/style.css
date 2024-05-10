@@ -1,0 +1,62 @@
+﻿html {
+    margin: 0;
+    
+}
+
+.form-entrance {
+    display: inline-block;
+    background-color: #FEE599;
+    padding: 5%;
+    border-radius: 8%;
+}
+
+.text-center {
+    margin-top: 100px;
+    text-align: left;
+}
+
+.form-entrance button {
+    border-radius: 150px 150px 150px 150px;
+    padding: 2%;
+    background-color: dimgray;
+    border: 0;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.form-entrance input {
+    border: 1px solid;
+    border-color: #808080;
+    padding: 2%;
+}
+
+.table-records {
+    background-color: #FEE599;
+    padding: 5%;
+    text-align: center;
+    margin: 5%;
+}
+
+.record {
+    display: inline-block;
+    padding: 5%;
+    background-color: white;
+    margin: 5%;
+    border: 1px solid;
+    border-color: lightgray;
+}
+
+.record img{
+    width: 500px;
+    height: 500px;
+    background-color: gray;
+}
+
+.record-name{
+    font-stretch: condensed;
+    font-size: 20px;
+}
+
+.img-p {
+    height: 50%;
+}

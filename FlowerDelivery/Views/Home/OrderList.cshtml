@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Список заказов";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/style.css" />
+
+@model MigrationDataBase.Records.Order[]
+<div class="text-center">
+    <div class="table-records">
+        @foreach (var order in @Model)
+        {
+            <div class="record">
+                <p class="img-p">
+                    <img alt="изображение заказа"
+                         href="~/image.jpg" />
+                </p>
+                <div>
+                    <p class="record-name">
+                        @order.Id
+                    </p>
+                    <p>
+                        @order.Time
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

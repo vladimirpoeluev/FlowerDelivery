@@ -1,0 +1,13 @@
+C:\Users\student\Desktop\FlowerDelivery\MigrationDataBase\obj\Debug\net7.0\MigrationDataBase.csproj.AssemblyReference.cache
+C:\Users\student\Desktop\FlowerDelivery\MigrationDataBase\obj\Debug\net7.0\MigrationDataBase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\student\Desktop\FlowerDelivery\MigrationDataBase\obj\Debug\net7.0\MigrationDataBase.AssemblyInfoInputs.cache
+C:\Users\student\Desktop\FlowerDelivery\MigrationDataBase\obj\Debug\net7.0\MigrationDataBase.AssemblyInfo.cs
+C:\Users\student\Desktop\FlowerDelivery\MigrationDataBase\obj\Debug\net7.0\MigrationDataBase.csproj.CoreCompileInputs.cache
+C:\Users\student\Desktop\FlowerDelivery\MigrationDataBase\bin\Debug\net7.0\MigrationDataBase.deps.json
+C:\Users\student\Desktop\FlowerDelivery\MigrationDataBase\bin\Debug\net7.0\MigrationDataBase.dll
+C:\Users\student\Desktop\FlowerDelivery\MigrationDataBase\bin\Debug\net7.0\MigrationDataBase.pdb
+C:\Users\student\Desktop\FlowerDelivery\MigrationDataBase\obj\Debug\net7.0\MigrationDataBase.dll
+C:\Users\student\Desktop\FlowerDelivery\MigrationDataBase\obj\Debug\net7.0\refint\MigrationDataBase.dll
+C:\Users\student\Desktop\FlowerDelivery\MigrationDataBase\obj\Debug\net7.0\MigrationDataBase.pdb
+C:\Users\student\Desktop\FlowerDelivery\MigrationDataBase\obj\Debug\net7.0\ref\MigrationDataBase.dll
+C:\Users\student\Desktop\FlowerDelivery\MigrationDataBase\bin\Debug\net7.0\config.json
