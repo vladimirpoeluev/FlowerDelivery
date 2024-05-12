@@ -41,3 +41,62 @@ C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\runtimes
 C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\Logic.dll
 C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\Logic.pdb
+C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\System.Diagnostics.EventLog.dll
+C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Diagnostics.EventLog.Messages.dll
+C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Diagnostics.EventLog.dll
+C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\Logic.dll.config
+C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\App.config
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\FlowerDelivery.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\FlowerDelivery.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\FlowerDelivery.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\FlowerDelivery.AssemblyInfo.cs
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\FlowerDelivery.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\FlowerDelivery.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\FlowerDelivery.RazorAssemblyInfo.cache
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\FlowerDelivery.RazorAssemblyInfo.cs
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\FlowerDelivery.sourcelink.json
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\FlowerDelivery.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\refint\FlowerDelivery.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\FlowerDelivery.pdb
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\appsettings.json
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\FlowerDelivery.staticwebassets.runtime.json
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\FlowerDelivery.exe
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\config.json
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\App.config
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\FlowerDelivery.deps.json
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\FlowerDelivery.runtimeconfig.json
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\FlowerDelivery.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\FlowerDelivery.pdb
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\System.Data.SqlClient.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\System.Diagnostics.EventLog.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\runtimes\win-arm64\native\sni.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\runtimes\win-x64\native\sni.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\runtimes\win-x86\native\sni.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Diagnostics.EventLog.Messages.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Diagnostics.EventLog.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\Logic.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\MigrationDataBase.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\Logic.pdb
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\Logic.dll.config
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\MigrationDataBase.pdb
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\staticwebassets\msbuild.FlowerDelivery.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\staticwebassets\msbuild.build.FlowerDelivery.props
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.FlowerDelivery.props
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.FlowerDelivery.props
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\scopedcss\bundle\FlowerDelivery.styles.css
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\scopedcss\projectbundle\FlowerDelivery.bundle.scp.css
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\FlowerDe.3FA0851C.Up2Date
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\FlowerDelivery.genruntimeconfig.cache
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\ref\FlowerDelivery.dll
+C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\FlowerDelivery.dll.config

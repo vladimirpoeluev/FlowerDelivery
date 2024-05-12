@@ -4,16 +4,28 @@
 @{
     Layout = "_AdminLayout";
 }
-
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
 @using MigrationDataBase.Records;
 @model MigrationDataBase.Records.User[]
 
 <div>
-    <ul>
+    <a asp-action="NewUser" class="btn btn-success">Добавить пользователя</a>
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Описание</th>
+        </tr>
         @foreach (MigrationDataBase.Records.User user in Model)
         {
-            <li>@user.Name</li>
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Name</td>
+                <td>@user.Surname</td>
+                <td>@user.Description</td>
+            </tr>
         }
-    </ul>
+    </table>
     
 </div>

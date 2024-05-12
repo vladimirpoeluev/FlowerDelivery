@@ -10,6 +10,6 @@ namespace MigrationDataBase.Interaction
     public interface IRecordInteractive
     {
         IRecord Get(int id);
-        IRecord Get();
+        IRecord[] Get();
     }
 }

@@ -5,13 +5,27 @@
     Layout = "_AdminLayout";
 }
 @using MigrationDataBase.Records
-@model Dictionary<string, User>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+
+
+@model Dictionary<string, MigrationDataBase.Records.User>
 
 <div>
-    <ul>
+    <table class="table table-striped">
+        <tr>
+            <th>Индитификатор</th>
+            <th>Имя пользователя</th>
+            <th>Фамилия</th>
+            <th>Описание</th>
+        </tr>
         @foreach(string key in Model.Keys)
         {
-            <li>@key = @Model[key].Name</li>
+            <tr>
+                <td>@key</td>
+                <td>@Model[key].Name</td>
+                <td>@Model[key].Surname</td>
+                <td>@Model[key].Description</td>
+            </tr>
         }
-    </ul>
+    </table>
 </div>
