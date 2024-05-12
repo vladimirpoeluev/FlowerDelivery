@@ -84,7 +84,6 @@ C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin
 C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\Logic.dll
 C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\MigrationDataBase.dll
 C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\Logic.pdb
-C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\Logic.dll.config
 C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\MigrationDataBase.pdb
 C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\staticwebassets.development.json

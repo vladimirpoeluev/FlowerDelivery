@@ -1,4 +1,5 @@
 using MigrationDataBase;
+using Logic;
 
 namespace TestsFlow
 {
@@ -7,16 +8,17 @@ namespace TestsFlow
         [SetUp]
         public void Setup()
         {
-            Test1();
         }
 
         [Test]
-        public void Test1()
+        [TestCase(1)]
+        [TestCase(2)]
+        [TestCase(3)]
+        public void Test1(int i)
         {
-            string result = ConfigGet.GetConnectionString("name");
-            if(result == "строка подключения")
-                Assert.Pass();
-            Assert.Fail();
+
+            Assert.That(i, Is.EqualTo(1), "Число должно быть равно 1");
+            
         }
     }
 }

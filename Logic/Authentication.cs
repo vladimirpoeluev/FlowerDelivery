@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    internal class uthentication
+    internal class Authentication
     {
     }
 }

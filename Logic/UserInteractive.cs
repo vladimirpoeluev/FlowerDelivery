@@ -38,12 +38,38 @@ namespace Logic
 
         public User[] Get(FilterUser f)
         {
-            throw new NotImplementedException();
+            List<User> result = new List<User>();
+
+            SqlConnection connection = new SqlConnection(_connectionString);
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("select Id from [IdentityUser] " +
+                                            "where login = @login and password = @password", connection);
+
+            cmd.Parameters.AddWithValue("login", f.login);
+            cmd.Parameters.AddWithValue("password", f.password);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+                return result.ToArray();
+            while (reader.Read())
+            {
+                result.Add((User)Get((int)reader["Id"]));
+            }
+
+            return result.ToArray();
         }
 
         public IRecord Get(int id)
         {
-            throw new NotImplementedException();
+            SqlConnection connection = new SqlConnection( _connectionString);
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("select * from [User] where Id = @id", connection);
+
+            cmd.Parameters.AddWithValue("id", id);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if(reader.Read())
+                return new User(id, (string)reader["Name"], (string)reader["Surname"], (string)reader["Description"]);
+            return null;
         }
 
         public IRecord[] Get()
