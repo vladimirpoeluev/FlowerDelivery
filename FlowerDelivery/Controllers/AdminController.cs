@@ -7,16 +7,31 @@ namespace FlowerDelivery.Controllers
 {
     public class AdminController : Controller
     {
+
+        public AdminController() 
+        {
+            try
+            {
+                User userS = ManagerSession.GetUser(HttpContext?.Connection?.Id ?? "ывад");
+                this.ViewData["Name"] = userS.Name + " " + userS.Surname;
+            }
+            catch
+            {
+                this.ViewData["Name"] = "Неавторизованный пользователь";
+            }
+        }
         public IActionResult Index()
         {
-            if (ManagerSession.GetUser(HttpContext.Connection.Id).Surname == "Admin")
+            User user = ManagerSession.GetUser(HttpContext.Connection.Id);
+            if (new InteractiveOfRoles().Check(user,new Admin(1,  ManagerSession.GetUser(HttpContext.Connection.Id))))
                 return View("ListOfSession", ManagerSession.GetUsers());
             return NotFound();
         }
 
         public IActionResult ListOfUser()
         {
-            if (ManagerSession.GetUser(HttpContext.Connection.Id).Surname != "Admin")
+            User userS = ManagerSession.GetUser(HttpContext.Connection.Id);
+            if (!new InteractiveOfRoles().Check(userS, new Admin(1,userS)))
                 return NotFound();
 
             var user = new UserInteractive();
@@ -30,7 +45,8 @@ namespace FlowerDelivery.Controllers
         [HttpPost]
         public IActionResult ListOfUser(User user)
         {
-            if (ManagerSession.GetUser(HttpContext.Connection.Id).Surname != "Admin")
+            User userS = ManagerSession.GetUser(HttpContext.Connection.Id);
+            if (!new InteractiveOfRoles().Check(userS, new Admin(1, user)))
                 return NotFound();
 
             UserInteractive userInteractive = new UserInteractive();
@@ -46,7 +62,8 @@ namespace FlowerDelivery.Controllers
 
         public IActionResult NewUser()
         {
-            if (ManagerSession.GetUser(HttpContext.Connection.Id).Surname == "Admin")
+            User user = ManagerSession.GetUser(HttpContext.Connection.Id);
+            if (new InteractiveOfRoles().Check(user, new Admin(1, ManagerSession.GetUser(HttpContext.Connection.Id))))
                 return View("NewUser");
             return NotFound();
         }

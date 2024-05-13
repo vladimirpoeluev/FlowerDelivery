@@ -2,7 +2,7 @@
 
 namespace MigrationDataBase.Interaction
 {
-    internal interface IRoleInteractive
+    public interface IRoleInteractive
     {
         Role Get(int id);
         Role[] Get();
