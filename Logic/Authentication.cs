@@ -1,12 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MigrationDataBase.Records;
+using MigrationDataBase.Filters;
 
 namespace Logic
 {
-    internal class Authentication
+    public class Authentication
     {
+
+        public User Lout(string login, string password)
+        {
+            UserInteractive loginInteractive = new UserInteractive();
+            try
+            {
+                return loginInteractive.Get(new FilterUser(login, password))[0];
+            }
+            catch 
+            {
+                return null;
+            }
+
+            
+        }
     }
 }

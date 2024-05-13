@@ -14,8 +14,6 @@ C:\Users\student\Desktop\FlowerDelivery\Logic\obj\Debug\net7.0\Logic.dll
 C:\Users\student\Desktop\FlowerDelivery\Logic\obj\Debug\net7.0\refint\Logic.dll
 C:\Users\student\Desktop\FlowerDelivery\Logic\obj\Debug\net7.0\Logic.pdb
 C:\Users\student\Desktop\FlowerDelivery\Logic\obj\Debug\net7.0\ref\Logic.dll
-C:\Users\student\Desktop\FlowerDelivery\Logic\bin\Debug\net7.0\Logic.dll.config
-C:\Users\student\Desktop\FlowerDelivery\Logic\bin\Debug\net7.0\App.config
 C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\Logic\bin\Debug\net7.0\config.json
 C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\Logic\bin\Debug\net7.0\Logic.deps.json
 C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\Logic\bin\Debug\net7.0\Logic.dll

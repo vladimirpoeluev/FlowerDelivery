@@ -49,7 +49,7 @@ namespace Logic
             cmd.Parameters.AddWithValue("password", f.password);
 
             SqlDataReader reader = cmd.ExecuteReader();
-            if (reader.HasRows)
+            if (!reader.HasRows)
                 return result.ToArray();
             while (reader.Read())
             {

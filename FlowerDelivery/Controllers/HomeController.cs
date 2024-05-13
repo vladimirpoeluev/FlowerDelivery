@@ -1,6 +1,7 @@
 ﻿using FlowerDelivery.Models;
 using Microsoft.AspNetCore.Mvc;
 using MigrationDataBase;
+using Logic;
 using System.Diagnostics;
 
 namespace FlowerDelivery.Controllers
@@ -27,9 +28,15 @@ namespace FlowerDelivery.Controllers
         [HttpPost]
         public IActionResult Entrance(string login, string password)
         {
-            if(ManagerSession.RegistUser(login, password, HttpContext.Connection.Id))
+            var authentication = new Logic.Authentication();
+            var user = authentication.Lout(login, password);
+            if ((user) != null)
+            {
+                ManagerSession.RegistUser(user, HttpContext.Connection.Id);
                 return View("OrderList", new OrderData().GetOrders());
-            else return View("Index");
+            }
+            else
+                return View("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

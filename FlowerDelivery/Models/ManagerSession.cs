@@ -12,10 +12,10 @@ namespace FlowerDelivery.Models
             _indentity = new Dictionary<string, User>();
         }
 
-        public static bool RegistUser(string username, string password, string connection)
+        public static bool RegistUser(User user, string connection)
         {
 
-            _indentity[connection] = new User(1, username, password, username + ' ' + password);
+            _indentity[connection] = user;
             return true;
         }
 

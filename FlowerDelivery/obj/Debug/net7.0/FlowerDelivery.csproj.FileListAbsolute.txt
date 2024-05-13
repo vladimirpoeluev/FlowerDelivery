@@ -46,7 +46,6 @@ C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\System.D
 C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Diagnostics.EventLog.Messages.dll
 C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Diagnostics.EventLog.dll
-C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\Logic.dll.config
 C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\App.config
 C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\FlowerDelivery.csproj.AssemblyReference.cache
 C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\FlowerDelivery.GeneratedMSBuildEditorConfig.editorconfig
@@ -99,3 +98,4 @@ C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj
 C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\FlowerDelivery.genruntimeconfig.cache
 C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\obj\Debug\net7.0\ref\FlowerDelivery.dll
 C:\Users\User\OneDrive\Рабочий стол\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\FlowerDelivery.dll.config
+C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery\bin\Debug\net7.0\FlowerDelivery.dll.config
