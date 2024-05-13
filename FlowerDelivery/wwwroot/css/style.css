@@ -70,3 +70,10 @@
 {
     width: 50px;
 }
+
+#navbar {
+    
+    border-top:100px solid;
+    border-bottom: 100px solid;
+    border-color: #D8E4C0;
+}
