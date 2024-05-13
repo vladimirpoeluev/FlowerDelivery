@@ -7,8 +7,7 @@ namespace FlowerDelivery.Controllers
 {
     public class AdminController : Controller
     {
-
-        public AdminController() 
+        private void NameDisplay()
         {
             try
             {
@@ -22,6 +21,8 @@ namespace FlowerDelivery.Controllers
         }
         public IActionResult Index()
         {
+            NameDisplay();
+
             User user = ManagerSession.GetUser(HttpContext.Connection.Id);
             if (new InteractiveOfRoles().Check(user,new Admin(1,  ManagerSession.GetUser(HttpContext.Connection.Id))))
                 return View("ListOfSession", ManagerSession.GetUsers());
@@ -30,6 +31,7 @@ namespace FlowerDelivery.Controllers
 
         public IActionResult ListOfUser()
         {
+            NameDisplay();
             User userS = ManagerSession.GetUser(HttpContext.Connection.Id);
             if (!new InteractiveOfRoles().Check(userS, new Admin(1,userS)))
                 return NotFound();
@@ -45,6 +47,7 @@ namespace FlowerDelivery.Controllers
         [HttpPost]
         public IActionResult ListOfUser(User user)
         {
+            NameDisplay();
             User userS = ManagerSession.GetUser(HttpContext.Connection.Id);
             if (!new InteractiveOfRoles().Check(userS, new Admin(1, user)))
                 return NotFound();
@@ -62,6 +65,7 @@ namespace FlowerDelivery.Controllers
 
         public IActionResult NewUser()
         {
+            NameDisplay();
             User user = ManagerSession.GetUser(HttpContext.Connection.Id);
             if (new InteractiveOfRoles().Check(user, new Admin(1, ManagerSession.GetUser(HttpContext.Connection.Id))))
                 return View("NewUser");

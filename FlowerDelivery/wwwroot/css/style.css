@@ -60,3 +60,13 @@
 .img-p {
     height: 50%;
 }
+
+.error-message 
+{
+    color: red;
+}
+
+.icon-com
+{
+    width: 50px;
+}

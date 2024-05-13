@@ -12,11 +12,8 @@ namespace FlowerDelivery.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        
-
-        public HomeController(ILogger<HomeController> logger)
+        private void NameDisplay()
         {
-            _logger = logger;
             try
             {
                 User userS = ManagerSession.GetUser(HttpContext?.Connection?.Id ?? "ывад");
@@ -28,19 +25,27 @@ namespace FlowerDelivery.Controllers
             }
         }
 
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
         public IActionResult Index()
         {
+            NameDisplay();
             return View();
         }
 
         public IActionResult Privacy()
         {
+            NameDisplay();
             return View();
         }
 
         [HttpPost]
         public IActionResult Entrance(string login, string password)
         {
+            NameDisplay();
             var authentication = new Logic.Authentication();
             var user = authentication.Lout(login, password);
             if ((user) != null)
@@ -52,7 +57,11 @@ namespace FlowerDelivery.Controllers
                 return View("OrderList", new OrderData().GetOrders());
             }
             else
+            {
+                ViewData["Error"] = "Были введены неверные данные";
                 return View("Index");
+            }
+               
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
