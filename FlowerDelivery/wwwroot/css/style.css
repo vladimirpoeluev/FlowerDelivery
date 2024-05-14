@@ -82,7 +82,7 @@
     border: 5px solid;
     border-color: lightgray;
     border-radius: 5%;
-    background-color: bisque;
+    background-color: gray;
     display: inline-block;
     width: 200px;
     margin: 10px;
@@ -91,6 +91,7 @@
 .image-card {
     height: 100px;
     border-radius: 5%;
+    background-color:burlywood;
 }
 
 .card-descrip {

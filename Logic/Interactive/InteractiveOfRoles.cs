@@ -2,6 +2,7 @@
 using MigrationDataBase.Records;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Reflection.PortableExecutable;
 
 namespace Logic.Interactive
 {
@@ -30,8 +31,15 @@ namespace Logic.Interactive
                 command = new SqlCommand("select * from [Deliveryman] where IdUser = @iduser", conn);
             command.Parameters.AddWithValue("iduser", user.Id);
 
-            if (command.ExecuteReader().Read())
+            var reader = command.ExecuteReader();
+            if(reader.Read())
+            {
+                reader.Close();
+                conn.Close();
                 return true;
+            }
+            reader.Close();
+            conn.Close();
             return false;
         }
     }

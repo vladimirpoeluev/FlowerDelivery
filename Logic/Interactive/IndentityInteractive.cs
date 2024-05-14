@@ -2,6 +2,7 @@
 using MigrationDataBase.Interaction;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Reflection.PortableExecutable;
 
 namespace Logic.Interactive
 {
