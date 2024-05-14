@@ -1,5 +1,6 @@
 ﻿using MigrationDataBase.Records;
 using MigrationDataBase.Filters;
+using Logic.Interactive;
 
 namespace Logic
 {

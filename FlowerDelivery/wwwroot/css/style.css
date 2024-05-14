@@ -77,3 +77,23 @@
     border-bottom: 100px solid;
     border-color: #D8E4C0;
 }
+
+.card {
+    border: 5px solid;
+    border-color: lightgray;
+    border-radius: 5%;
+    background-color: bisque;
+    display: inline-block;
+    width: 200px;
+    margin: 10px;
+}
+
+.image-card {
+    height: 100px;
+    border-radius: 5%;
+}
+
+.card-descrip {
+    border: 5px solid;
+    border-color: lightgray;
+}

@@ -21,7 +21,14 @@ namespace FlowerDelivery.Models
 
         public static User GetUser(string connection)
         {
-            return _indentity[connection];
+            try
+            {
+                return _indentity[connection];
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public static Dictionary<string, User> GetUsers()

@@ -12,7 +12,7 @@ namespace FlowerDelivery.Controllers
             try
             {
                 User userS = ManagerSession.GetUser(HttpContext?.Connection?.Id ?? "ывад");
-                this.ViewData["Name"] = userS.Name + " " + userS.Surname;
+                this.ViewData["Name"] = userS?.Name + " " + userS?.Surname;
             }
             catch
             {
@@ -61,6 +61,18 @@ namespace FlowerDelivery.Controllers
                 result.Add((User)u);
 
             return View("UserOfList", result.ToArray());
+        }
+
+        public IActionResult ListOfOrder()
+        {
+            NameDisplay();
+            var list = new List<Order>();
+            foreach(Order order in new OrderInteractive().Get())
+            {
+                list.Add(order);
+            }
+
+            return View("ListOfOrder", list.ToArray());
         }
 
         public IActionResult NewUser()

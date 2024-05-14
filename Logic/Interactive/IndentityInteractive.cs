@@ -21,6 +21,7 @@ namespace Logic.Interactive
                 sqlCommand.Parameters.AddWithValue("password", identity.Password);
 
                 sqlCommand.ExecuteNonQuery();
+                sqlConnection.Close();
             }
             catch
             {
@@ -45,6 +46,8 @@ namespace Logic.Interactive
                 {
                     return new IdentityUser((int)reader["Id"], (string)reader["Login"], (string)reader["Password"]);
                 }
+                reader.Close();
+                sqlConnection.Close();
                 return null;
 
             }

@@ -4,7 +4,7 @@ using MigrationDataBase;
 using MigrationDataBase.Records;
 using Logic;
 using System.Diagnostics;
-using System.Data;
+using Logic.Interactive;
 
 namespace FlowerDelivery.Controllers
 {
@@ -17,7 +17,7 @@ namespace FlowerDelivery.Controllers
             try
             {
                 User userS = ManagerSession.GetUser(HttpContext?.Connection?.Id ?? "ывад");
-                this.ViewData["Name"] = userS.Name + " " + userS.Surname;
+                this.ViewData["Name"] = userS?.Name + " " + userS?.Surname;
             }
             catch
             {
@@ -46,7 +46,7 @@ namespace FlowerDelivery.Controllers
         public IActionResult Entrance(string login, string password)
         {
             NameDisplay();
-            var authentication = new Logic.Authentication();
+            var authentication = new Authentication();
             var user = authentication.Lout(login, password);
             if ((user) != null)
             {
