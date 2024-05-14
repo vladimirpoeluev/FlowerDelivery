@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\student\Desktop\FlowerDelivery\FlowerDelivery
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/student/Desktop/FlowerDelivery/FlowerDelivery/Views/Admin/AddOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/student/Desktop/FlowerDelivery/FlowerDelivery/Views/Admin/ListOfOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTGlzdE9mT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/student/Desktop/FlowerDelivery/FlowerDelivery/Views/Admin/ListOfSession.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTGlzdE9mU2Vzc2lvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
