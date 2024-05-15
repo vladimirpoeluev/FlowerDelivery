@@ -22,10 +22,12 @@ namespace Logic.Interactive
             SqlDataReader reader = command.ExecuteReader();
             if(reader.Read())
             {
-                return new Address((int)reader["Id"], (string)reader["Name"]);
+                var resutl = new Address((int)reader["Id"], (string)reader["Name"]);
+                reader.Close();
+                conn.Close();
+                return resutl;
             }
-            reader.Close();
-            conn.Close();
+           
             return null;
         }
 

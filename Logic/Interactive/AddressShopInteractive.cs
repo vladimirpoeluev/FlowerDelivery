@@ -22,11 +22,11 @@ namespace Logic.Interactive
             SqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
             {
-                return new Address((int)reader["Id"], (string)reader["Name"]);
+                return new AddressShop((int)reader["Id"], (string)reader["Name"]);
             }
             reader.Close();
             conn.Close();
-            return null;
+            return new AddressShop(id, "Lf");
         }
 
         public IRecord[] Get()
@@ -40,7 +40,7 @@ namespace Logic.Interactive
 
             while (reader.Read())
             {
-                addresses.Add(new Address((int)reader["Id"], (string)reader["Name"]));
+                addresses.Add(new AddressShop((int)reader["Id"], (string)reader["Name"]));
             }
             reader.Close();
             conn.Close();

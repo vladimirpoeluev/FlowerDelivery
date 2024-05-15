@@ -83,5 +83,10 @@ namespace FlowerDelivery.Controllers
                 return View("NewUser");
             return NotFound();
         }
+
+        public IActionResult ListOfFlower()
+        {
+
+        }
     }
 }
