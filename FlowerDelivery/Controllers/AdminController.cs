@@ -19,12 +19,26 @@ namespace FlowerDelivery.Controllers
                 this.ViewData["Name"] = "Неавторизованный пользователь";
             }
         }
+        private bool Check()
+        {
+            try
+            {
+                User user = ManagerSession.GetUser(HttpContext?.Connection?.Id ?? "sd");
+                if(user == null) 
+                    return false;
+                return new InteractiveOfRoles().Check(user, new Admin(1, ManagerSession.GetUser(HttpContext.Connection.Id)));
+            }
+            catch
+            {
+                return false;
+            }
+            
+        }
+
         public IActionResult Index()
         {
             NameDisplay();
-
-            User user = ManagerSession.GetUser(HttpContext.Connection.Id);
-            if (new InteractiveOfRoles().Check(user,new Admin(1,  ManagerSession.GetUser(HttpContext.Connection.Id))))
+            if (Check())
                 return View("ListOfSession", ManagerSession.GetUsers());
             return NotFound();
         }
@@ -32,8 +46,7 @@ namespace FlowerDelivery.Controllers
         public IActionResult ListOfUser()
         {
             NameDisplay();
-            User userS = ManagerSession.GetUser(HttpContext.Connection.Id);
-            if (!new InteractiveOfRoles().Check(userS, new Admin(1,userS)))
+            if (!Check())
                 return NotFound();
 
             var user = new UserInteractive();
@@ -48,8 +61,7 @@ namespace FlowerDelivery.Controllers
         public IActionResult ListOfUser(User user)
         {
             NameDisplay();
-            User userS = ManagerSession.GetUser(HttpContext.Connection.Id);
-            if (!new InteractiveOfRoles().Check(userS, new Admin(1, user)))
+            if (!Check())
                 return NotFound();
 
             UserInteractive userInteractive = new UserInteractive();
@@ -66,6 +78,8 @@ namespace FlowerDelivery.Controllers
         public IActionResult ListOfOrder()
         {
             NameDisplay();
+            if (!Check())
+                return NotFound();
             var list = new List<Order>();
             foreach(Order order in new OrderInteractive().Get())
             {
@@ -78,15 +92,26 @@ namespace FlowerDelivery.Controllers
         public IActionResult NewUser()
         {
             NameDisplay();
-            User user = ManagerSession.GetUser(HttpContext.Connection.Id);
-            if (new InteractiveOfRoles().Check(user, new Admin(1, ManagerSession.GetUser(HttpContext.Connection.Id))))
+            if (Check())
                 return View("NewUser");
             return NotFound();
         }
 
         public IActionResult ListOfFlower()
         {
+            NameDisplay();
+            if (!Check())
+                return NotFound();
+            return View("ListOfFlowers", new InteractiveFlower().Get());
+        }
 
+        public IActionResult Flower(int idFlower)
+        {
+            NameDisplay();
+            if (!Check())
+                return NotFound();
+
+            return Content(idFlower.ToString());
         }
     }
 }

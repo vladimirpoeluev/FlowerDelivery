@@ -6,22 +6,24 @@
 }
 @using MigrationDataBase.Records
 @model Order[]
-
-@foreach(Order order in Model){
-    <div class="card">
-        <div class="image-card">
-            <img alt="Карта заказа" src="#" />
+<div class="form-entrance">
+    @foreach (Order order in Model)
+    {
+        <div class="card">
+            <div class="image-card">
+                <img alt="Карта заказа" src="#" />
+            </div>
+            <div class="card-descrip">
+                <b>@order.Id</b>
+                <p>
+                    Адрес магазина
+                    @(order.AddressShop?.Name ?? "Не назначен")
+                </p>
+                <p>
+                    Адрес клиента
+                    @order.Client.Address.Name
+                </p>
+            </div>
         </div>
-        <div class="card-descrip">
-            <b>@order.Id</b>
-            <p>
-                Адрес магазина
-                @(order.AddressShop?.Name ?? "Не назначен")
-            </p>
-            <p>
-                Адрес клиента
-                @order.Client.Address.Name
-            </p>
-        </div>
-    </div>   
-}
+    }
+</div>
