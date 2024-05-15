@@ -8,6 +8,8 @@
     background-color: #FEE599;
     padding: 5%;
     border-radius: 8%;
+    color: black;
+    text-decoration: none;
 }
 
 .text-center {
@@ -101,4 +103,17 @@
 .card-descrip {
     border: 5px solid;
     border-color: lightgray;
+}
+
+.descr-prof {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+}
+
+.icon-prof img {
+    width: 250px;
+}
+
+.top-form {
 }

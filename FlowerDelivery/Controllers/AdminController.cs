@@ -26,7 +26,7 @@ namespace FlowerDelivery.Controllers
                 User user = ManagerSession.GetUser(HttpContext?.Connection?.Id ?? "sd");
                 if(user == null) 
                     return false;
-                return new InteractiveOfRoles().Check(user, new Admin(1, ManagerSession.GetUser(HttpContext.Connection.Id)));
+                return new InteractiveOfRoles().Check(user, new Admin(1, user));
             }
             catch
             {
@@ -80,6 +80,7 @@ namespace FlowerDelivery.Controllers
             NameDisplay();
             if (!Check())
                 return NotFound();
+
             var list = new List<Order>();
             foreach(Order order in new OrderInteractive().Get())
             {
@@ -111,7 +112,7 @@ namespace FlowerDelivery.Controllers
             if (!Check())
                 return NotFound();
 
-            return Content(idFlower.ToString());
+            return View((Flower)new InteractiveFlower().Get(idFlower));
         }
     }
 }

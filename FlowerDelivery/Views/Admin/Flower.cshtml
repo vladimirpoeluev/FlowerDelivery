@@ -2,8 +2,33 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    Layout = "_AdminLayout";
 }
 @using MigrationDataBase.Records
 @model Flower
 
-<dialog></dialog>
+<div class="top-form">
+    <div class="icon-prof descr-prof">
+        <img alt="фотография профиля" src="https://cdn-icons-png.flaticon.com/512/149/149452.png" />
+        <p>
+            <b>
+                @Model.Id
+            </b>
+            @Model.User.Name @Model.User.Surname
+        </p>
+    </div>
+    <div class="form-entrance descr-prof">
+        <div>
+            <p>
+                @Model.User.Description
+            </p>
+        </div>
+        <div>
+            <select>
+                <option>Да</option>
+                <option>Нет</option>
+                <option>Не знаю</option>
+            </select>
+        </div>
+    </div>
+</div>
