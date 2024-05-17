@@ -3,6 +3,8 @@ using System.Data.SqlClient;
 using System.Configuration;
 using MigrationDataBase.Records;
 using MigrationDataBase.Filters;
+using System.ComponentModel;
+using System.Data.SqlTypes;
 
 namespace Logic.Interactive
 {
@@ -58,6 +60,7 @@ namespace Logic.Interactive
                 {
                     Flower flower = null;
                     Deliveryman deliveryman = null;
+                    
                     try
                     {
                         flower = (Flower)new FlowerInteractive().Get((int)reader["IdFlower"]);
@@ -93,8 +96,11 @@ namespace Logic.Interactive
             {
                 Flower flower = null;
                 Deliveryman deliveryman = null;
+                
+
                 try
                 {
+
                     flower = (Flower)new FlowerInteractive().Get((int)reader["IdFlower"]);
                     deliveryman = (Deliveryman)new DeliverymanInteractive().Get((int)reader["IdDeliveryman"]);
                 }
@@ -125,7 +131,7 @@ namespace Logic.Interactive
                                                     IdAddressShop = @idAddressShop,
                                                     IdFlower = @idFlower,
                                                     IdDeliveryman = @idDeliveryman,
-                                                    @IdOrderStatus = @idOrderStatus
+                                                    IdOrderStatus = @idOrderStatus
                                                 where Id = @id", conn);
 
                 command.Parameters.AddWithValue("idClient", newOrder.Client.Id);

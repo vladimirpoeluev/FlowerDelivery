@@ -72,5 +72,20 @@ namespace FlowerDelivery.Controllers
             return View(deliverymans.ToArray());
            
         }
+
+        public IActionResult SetStatusOrder(int idOrder)
+        {
+            NameDisplay();
+            if (!Check())
+                return NotFound();
+
+            var intir = new OrderInteractive();
+            Order order = (Order)intir.Get(idOrder);
+            var newOrder = new Order(order.Id, order.Client, order.Time, order.AddressShop, order.Flower, order.Deliveryman, 
+                new OrderStatusInteractive().Get(3));
+            intir.Set(order, newOrder);
+            return ListOfOrder();
+
+        }
     }
 }

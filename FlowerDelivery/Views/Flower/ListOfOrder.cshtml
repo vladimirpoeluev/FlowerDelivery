@@ -31,6 +31,7 @@
                 <P>
                     Статус: @order.OrderStatus.Name
                 </P>
+                <a asp-action="SetStatusOrder" asp-route-idOrder="@order.Id">Задать статус "Заказ готов"</a>
             </div>
         </div>
     }
