@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Configuration;
 using MigrationDataBase.Interaction;
+using MigrationDataBase.Filters;
 
 namespace Logic.Interactive
 {
@@ -13,13 +14,13 @@ namespace Logic.Interactive
             using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["data"].ConnectionString))
             {
                 connection.Open();
-                var command = new SqlCommand("select * from [Flower} where Id = @id", connection);
+                var command = new SqlCommand("select * from [Deliveryman] where Id = @id", connection);
                 command.Parameters.AddWithValue("id", id);
                 using (var reader = command.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        deliveryman = new Flower((int)reader["Id"], (User)new UserInteractive().Get((int)reader["IdUser"]));
+                        deliveryman = new Deliveryman((int)reader["Id"], (User)new UserInteractive().Get((int)reader["IdUser"]));
                     }
                 }
             }
@@ -43,6 +44,25 @@ namespace Logic.Interactive
                 }
             }
             return roles.ToArray();
+        }
+
+        public Role Get(FilterByUser filter)
+        {
+            Role deliveryman = null;
+            using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["data"].ConnectionString))
+            {
+                connection.Open();
+                var command = new SqlCommand("select * from [Deliveryman] where IdUser = @idUser", connection);
+                command.Parameters.AddWithValue("idUser", filter.User.Id);
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        deliveryman = new Deliveryman((int)reader["Id"], (User)new UserInteractive().Get((int)reader["IdUser"]));
+                    }
+                }
+            }
+            return deliveryman;
         }
     }
 }

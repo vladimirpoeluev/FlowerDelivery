@@ -9,7 +9,7 @@ namespace Logic.Interactive
     {
         public OrderStatus Get(int id)
         {
-            OrderStatus result = null;
+            OrderStatus result = new OrderStatus(id, "df");
 
             using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["data"].ConnectionString))
             {

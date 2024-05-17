@@ -3,6 +3,7 @@ using Logic.Interactive;
 using Microsoft.AspNetCore.Mvc;
 using MigrationDataBase.Records;
 using MigrationDataBase.Filters;
+using System.Security.Cryptography.Xml;
 
 namespace FlowerDelivery.Controllers
 {
@@ -42,11 +43,11 @@ namespace FlowerDelivery.Controllers
                 return NotFound();
 
             var inter = new OrderInteractive();
-            List<Order> orders = new List<Order>();
-            foreach (var value in inter.Get(new FilterOrderStatus(3)))
-                orders.Add((Order)value);
+            var list = new List<Order>();
+            foreach (IRecord record in inter.Get(new FilterOrderStatus(3)))
+                list.Add((Order) record);
 
-            return View("ListOfOrder", orders.ToArray());
+            return View("ListOfOrder", list.ToArray());
         }
 
         public IActionResult ListOfOrder()
@@ -56,7 +57,34 @@ namespace FlowerDelivery.Controllers
 
         public IActionResult OrderOfDelivery(int idOrder)
         {
-            return View();
+            NameDisplay();
+            if (!Check())
+                return NotFound();
+            Order order = (Order)new OrderInteractive().Get(idOrder);
+            
+            var newOrder = new Order(order.Id, order.Client, order.Time, order.AddressShop, order.Flower, 
+                                    (Deliveryman)new DeliverymanInteractive().Get(new FilterByUser(ManagerSession.GetUser(HttpContext?.Connection?.Id ?? "ывад"))), 
+                                    order.OrderStatus);
+            var inter = new OrderInteractive();
+
+            inter.Set(order, newOrder);
+
+            return View("OrderOfDeliveryman", order);
+        }
+
+        public IActionResult SetStatusOrder(int idOrder)
+        {
+            NameDisplay();
+            if (!Check())
+                return NotFound();
+
+            Order order = (Order)new OrderInteractive().Get(idOrder);
+            var newOrder = new Order(order.Id, order.Client, order.Time, order.AddressShop, order.Flower, order.Deliveryman, new OrderStatusInteractive().Get(4));
+            var inter = new OrderInteractive();
+
+            inter.Set(order, newOrder);
+
+            return Index();
         }
     }
 }

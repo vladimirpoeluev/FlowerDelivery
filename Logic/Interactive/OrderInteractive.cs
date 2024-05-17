@@ -18,17 +18,28 @@ namespace Logic.Interactive
             var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["data"].ConnectionString);
             conn.Open();
 
-            var command = new SqlCommand("selet * from [Order] where Id = @id");
+            var command = new SqlCommand("select * from [Order] where Id = @id", conn);
             command.Parameters.AddWithValue("id", id);
             SqlDataReader reader = command.ExecuteReader();
             Order result = null;
+            Flower flower = null;
+            Deliveryman deliveryman = null;
+            try
+            {
+                flower = (Flower)new FlowerInteractive().Get((int)reader["IdFlower"]);
+                deliveryman = (Deliveryman)new DeliverymanInteractive().Get((int)reader["IdDeliveryman"]);
+            }
+            catch
+            {
+
+            }
             if (reader.Read())
             {
                 result = new Order(id, (Client)new ClientInteractive().Get((int)reader["IdClient"]),
                                     (DateTime)reader["Time"], 
-                                    new AddressShopInteractive().Get((int)reader["IdAddressShop"]) as AddressShop,
-                                    null, 
-                                    null,
+                                    (AddressShop)new AddressShopInteractive().Get((int)reader["IdAddressShop"]),
+                                    flower,
+                                    deliveryman,
                                     new OrderStatusInteractive().Get((int)reader["IdOrderStatus"]));
             }
             reader.Close();
@@ -45,13 +56,24 @@ namespace Logic.Interactive
                 command.Parameters.AddWithValue("idOrderStatus", filrer.IdStatus);
                 using (SqlDataReader reader =  command.ExecuteReader())
                 {
-                    while(reader.Read())
+                    Flower flower = null;
+                    Deliveryman deliveryman = null;
+                    try
+                    {
+                        flower = (Flower)new FlowerInteractive().Get((int)reader["IdFlower"]);
+                        deliveryman = (Deliveryman)new DeliverymanInteractive().Get((int)reader["IdDeliveryman"]);
+                    }
+                    catch
+                    {
+
+                    }
+                    while (reader.Read())
                     {
                         orders.Add(new Order((int)reader["id"], (Client)new ClientInteractive().Get((int)reader["IdClient"]),
                                     (DateTime)reader["Time"],
-                                    new AddressShopInteractive().Get((int)reader["IdAddressShop"]) as AddressShop,
-                                    null,
-                                    null,
+                                    (AddressShop)new AddressShopInteractive().Get((int)reader["IdAddressShop"]),
+                                    flower,
+                                    deliveryman,
                                     new OrderStatusInteractive().Get((int)reader["IdOrderStatus"])));
                     }
                 }
@@ -69,11 +91,22 @@ namespace Logic.Interactive
             List<IRecord> records = new List<IRecord>();
             while(reader.Read())
             {
+                Flower flower = null;
+                Deliveryman deliveryman = null;
+                try
+                {
+                    flower = (Flower)new FlowerInteractive().Get((int)reader["IdFlower"]);
+                    deliveryman = (Deliveryman)new DeliverymanInteractive().Get((int)reader["IdDeliveryman"]);
+                }
+                catch
+                {
+
+                }
                 records.Add(new Order((int)reader["id"], (Client)new ClientInteractive().Get((int)reader["IdClient"]),
                                     (DateTime)reader["Time"],
-                                    new AddressShopInteractive().Get((int)reader["IdAddressShop"]) as AddressShop,
-                                    null,
-                                    null,
+                                    (AddressShop)new AddressShopInteractive().Get((int)reader["IdAddressShop"]),
+                                    flower,
+                                    deliveryman,
                                     new OrderStatusInteractive().Get((int)reader["IdOrderStatus"])));
             }
             reader.Close();
@@ -86,14 +119,23 @@ namespace Logic.Interactive
             using(var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["data"].ConnectionString))
             {
                 conn.Open();
-                var command = new SqlCommand("", conn);
+                var command = new SqlCommand(@"update [Order]
+                                               set  IdClient = @idClient,
+                                                    Time = @time,
+                                                    IdAddressShop = @idAddressShop,
+                                                    IdFlower = @idFlower,
+                                                    IdDeliveryman = @idDeliveryman,
+                                                    @IdOrderStatus = @idOrderStatus
+                                                where Id = @id", conn);
 
                 command.Parameters.AddWithValue("idClient", newOrder.Client.Id);
                 command.Parameters.AddWithValue("time", newOrder.Time);
                 command.Parameters.AddWithValue("idAddressShop", newOrder.AddressShop.Id);
-                command.Parameters.AddWithValue("idFlower", newOrder?.Flower.Id);
-                command.Parameters.AddWithValue("idDeliveryman", newOrder?.Deliveryman.Id);
-                command.Parameters.AddWithValue("idPaymentStatus", newOrder);
+                command.Parameters.AddWithValue("idFlower", newOrder?.Flower?.Id ?? 0);
+                command.Parameters.AddWithValue("idDeliveryman", newOrder?.Deliveryman?.Id ?? 0);
+                command.Parameters.AddWithValue("idPaymentStatus", 0);
+                command.Parameters.AddWithValue("idOrderStatus", newOrder?.OrderStatus.Id);
+                command.Parameters.AddWithValue("id", order.Id);
 
                 command.ExecuteNonQuery();
             }

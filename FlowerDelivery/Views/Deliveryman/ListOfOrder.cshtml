@@ -10,25 +10,27 @@
 <div class="form-entrance">
     @foreach (Order order in Model)
     {
-        <div class="card">
-            <div class="image-card">
-                <img alt="Карта заказа" src="https://cdn-icons-png.flaticon.com/512/149/149452.png" />
-            </div>
-            <div class="card-descrip">
-                <b>@order.Id</b>
-                <p>
-                    @(order.Time)
-                </p>
-                <p>
-                    @(order.AddressShop)
-                </p>
-                <p>
-                    @order.Client.Name @order.Client.Surname
-                </p>
-                <p>
-                    @order.Client.Address.Name
-                </p>
-            </div>
-        </div>
+        <a asp-controller="Deliveryman" asp-action="OrderOfDelivery" asp-route-idOrder="@order.Id">
+             <div class="card">
+                 <div class="image-card">
+                     <img alt="Карта заказа" src="https://cdn-icons-png.flaticon.com/512/149/149452.png" />
+                 </div>
+                 <div class="card-descrip">
+                     <b>@order.Id</b>
+                     <p>
+                         @(order.Time)
+                     </p>
+                     <p>
+                         @(order.AddressShop)
+                     </p>
+                     <p>
+                         @order.Client.Name @order.Client.Surname
+                     </p>
+                     <p>
+                         @order.Client.Address.Name
+                     </p>
+                 </div>
+             </div>
+        </a>
     }
 </div>

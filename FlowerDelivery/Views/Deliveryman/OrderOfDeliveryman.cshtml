@@ -14,6 +14,6 @@
     <p>
         Адрес клиента: @Model.Client.Address.Name
     </p>
-    <a>Заказ доставлен</a>
+    <a asp-action="SetStatusOrder" asp-route-idOrder="@Model.Id">Заказ доставлен</a>
     <a>Заказ был возвращен</a>
 </div>
