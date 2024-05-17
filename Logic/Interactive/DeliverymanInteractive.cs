@@ -9,7 +9,21 @@ namespace Logic.Interactive
     {
         public Role Get(int id)
         {
-            throw new NotImplementedException();
+            Role deliveryman = null;
+            using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["data"].ConnectionString))
+            {
+                connection.Open();
+                var command = new SqlCommand("select * from [Flower} where Id = @id", connection);
+                command.Parameters.AddWithValue("id", id);
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        deliveryman = new Flower((int)reader["Id"], (User)new UserInteractive().Get((int)reader["IdUser"]));
+                    }
+                }
+            }
+            return deliveryman;
         }
 
         public Role[] Get()
