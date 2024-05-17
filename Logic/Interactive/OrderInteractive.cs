@@ -40,6 +40,7 @@ namespace Logic.Interactive
             List<Order> orders = new List<Order>();
             using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["data"].ConnectionString))
             {
+                connection.Open();
                 var command = new SqlCommand("select * from [Order] where IdOrderStatus = @idOrderStatus", connection);
                 command.Parameters.AddWithValue("idOrderStatus", filrer.IdStatus);
                 using (SqlDataReader reader =  command.ExecuteReader())

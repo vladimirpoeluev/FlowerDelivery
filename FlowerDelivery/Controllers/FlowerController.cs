@@ -1,4 +1,4 @@
-﻿
+﻿using MigrationDataBase.Filters;
 using FlowerDelivery.Models;
 using Logic.Interactive;
 using Microsoft.AspNetCore.Mvc;
@@ -52,7 +52,7 @@ namespace FlowerDelivery.Controllers
 
             var inter = new OrderInteractive();
             List<Order> orders = new List<Order>();
-            foreach(var value in inter.Get())
+            foreach(var value in inter.Get(new FilterOrderStatus(1)))
                 orders.Add((Order)value);
 
             return View("ListOfOrder", orders.ToArray());
