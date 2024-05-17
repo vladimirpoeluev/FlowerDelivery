@@ -2,4 +2,27 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    Layout = "_FlowerLayout";
 }
+@using MigrationDataBase.Records
+@model Deliveryman[]
+
+<div class="form-entrance">
+    @foreach(var deliveryman in Model)
+    {
+        <div class="card">
+            <div class="image-card">
+                <img alt="Карта заказа" src="https://cdn-icons-png.flaticon.com/512/149/149452.png" />
+            </div>
+            <div class="card-descrip">
+                <b>@deliveryman.Id</b>
+                <p>
+                    @deliveryman.User.Name @deliveryman.User.Surname
+                </p>
+                <p>
+                    @deliveryman.User.Description
+                </p>
+            </div>
+        </div>
+    }
+</div>

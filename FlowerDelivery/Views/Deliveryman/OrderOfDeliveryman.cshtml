@@ -2,4 +2,18 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    Layout = "_DeliverymanLayout";
 }
+@using MigrationDataBase.Records
+@model Order
+
+<div class="form-entrance">
+    <p>
+        Адрес магазина: @Model.AddressShop.Name
+    </p>
+    <p>
+        Адрес клиента: @Model.Client.Address.Name
+    </p>
+    <a>Заказ доставлен</a>
+    <a>Заказ был возвращен</a>
+</div>

@@ -54,6 +54,10 @@ namespace FlowerDelivery.Controllers
 
                 if(new InteractiveOfRoles().Check(user, new Admin(0, user)))
                     return Redirect("~/Admin");
+                if (new InteractiveOfRoles().Check(user, new Flower(0, user)))
+                    return Redirect("~/Flower");
+                if (new InteractiveOfRoles().Check(user, new Deliveryman(0, user)))
+                    return Redirect("~/Deliveryman");
                 return View("OrderList", new OrderData().GetOrders());
             }
             else

@@ -8,6 +8,7 @@ namespace MigrationDataBase.Records
                                 DateTime Time,
                                 AddressShop AddressShop,
                                 Flower Flower,
-                                Deliveryman Deliveryman
-                               ) : IRecord ;
+                                Deliveryman Deliveryman,
+                                OrderStatus OrderStatus
+                                ) : IRecord ;
 }
