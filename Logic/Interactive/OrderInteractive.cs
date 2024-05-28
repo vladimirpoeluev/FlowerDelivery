@@ -3,8 +3,6 @@ using System.Data.SqlClient;
 using System.Configuration;
 using MigrationDataBase.Records;
 using MigrationDataBase.Filters;
-using System.ComponentModel;
-using System.Data.SqlTypes;
 
 namespace Logic.Interactive
 {
@@ -12,7 +10,24 @@ namespace Logic.Interactive
     {
         public bool Add(Order order)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["data"].ConnectionString))
+            {
+                connection.Open();
+                var command = new SqlCommand(@" insert into[Order] 
+                                                (IdClient, Time, IdAddressShop, IdFlower, IdDeliveryman, IdPaymentStatus, IdOrderStatus)
+                                                values(@idClient, @time, @idAddress, @idFlower, @idDeliveryman, @idPaymentStatus, @idOrderStatus)", 
+                                                connection);
+                command.Parameters.AddWithValue("idClient", order.Client.Id);
+                command.Parameters.AddWithValue("time", order.Time);
+                command.Parameters.AddWithValue("idAddress", order.AddressShop.Id);
+                command.Parameters.AddWithValue("idFlower", order?.Flower?.Id ?? 0);
+                command.Parameters.AddWithValue("idDeliveryman", order?.Deliveryman?.Id ?? 0);
+                command.Parameters.AddWithValue("idPaymentStatus", 1);
+                command.Parameters.AddWithValue("idOrderStatus", 1);
+                if (command.ExecuteNonQuery() != 0)
+                    return false;
+            }
+            return true;
         }
 
         public IRecord Get(int id)

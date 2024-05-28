@@ -40,6 +40,7 @@ namespace FlowerDelivery.Controllers
             NameDisplay();
             if (Check())
                 return View("ListOfSession", ManagerSession.GetUsers());
+
             return NotFound();
         }
 
@@ -64,7 +65,7 @@ namespace FlowerDelivery.Controllers
             if (!Check())
                 return NotFound();
 
-            UserInteractive userInteractive = new UserInteractive();
+            var userInteractive = new UserInteractive();
             userInteractive.Add(user);
 
             var result = new List<User>();
@@ -82,12 +83,12 @@ namespace FlowerDelivery.Controllers
                 return NotFound();
 
             var list = new List<Order>();
-            foreach(Order order in new OrderInteractive().Get())
+            foreach(IRecord order in new OrderInteractive().Get())
             {
-                list.Add(order);
+                list.Add((Order)order);
             }
 
-            return View("ListOfOrder", list.ToArray());
+            return View(list.ToArray());
         }
 
         public IActionResult NewUser()
@@ -113,6 +114,34 @@ namespace FlowerDelivery.Controllers
                 return NotFound();
 
             return View((Flower)new InteractiveFlower().Get(idFlower));
+        }
+
+
+       
+
+        public IActionResult AddOrder()
+        {
+            NameDisplay();
+            if (!Check())
+                return NotFound();
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddOrder(AddOrderForms forms)
+        {
+            NameDisplay();
+            if (!Check())
+                return NotFound();
+
+            var inter = new OrderInteractive();
+            var order = new Order(1, (Client)new ClientInteractive().Get(forms.IdClient), DateTime.Now, 
+                                    (AddressShop)new AddressShopInteractive().Get(1),
+                                    null, null, new OrderStatusInteractive().Get(1));
+            inter.Add(order);
+
+            return Index();
         }
     }
 }

@@ -3,3 +3,44 @@
 *@
 @{
 }
+@using MigrationDataBase.Records
+@using Logic.Interactive
+@model AddOrderForms
+
+<center>
+    <div class="form-entrance">
+        <h1>Добавление заказа</h1>
+
+        <form method="post" asp-action="AddOrder">
+            <p>
+                <label asp-for="IdClient">Клиент</label>
+                <select asp-for="IdClient">
+                    @foreach (Client client in new ClientInteractive().Get())
+                    {
+                        <option value="@client.Id">@client.Name @client.Surname</option>
+                    }
+                </select>
+            </p>
+            <p>
+                <label asp-for="IdFlower">Фловер</label>
+                <select asp-for="IdFlower">
+                    @foreach (Flower flower in new FlowerInteractive().Get())
+                    {
+                        <option value="@flower.Id">@flower.User.Name @flower.User.Surname</option>
+                    }
+                </select>
+            </p>
+            <p>
+                <label asp-for="IdAddressShop">Адрес магазина</label>
+                <select asp-for="IdAddressShop">
+                    @foreach (AddressShop address in new AddressShopInteractive().Get())
+                    {
+                        <option value="@address.Id">@address.Name</option>
+                    }
+                </select>
+            </p>
+
+            <button>Создать заказ</button>
+        </form>
+    </div>
+</center>

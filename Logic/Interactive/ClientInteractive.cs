@@ -38,10 +38,10 @@ namespace Logic.Interactive
             var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["data"].ConnectionString);
             conn.Open();
 
-            var command = new SqlCommand("select * from [Client]");
+            var command = new SqlCommand("select * from [Client]", conn);
             SqlDataReader reader = command.ExecuteReader();
             List<IRecord> records = new List<IRecord>();
-            if (reader.Read())
+            while (reader.Read())
             {
                 records.Add(new Client((int)reader["Id"],
                                      (string)reader["Name"],

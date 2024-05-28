@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace Logic.Interactive
 {
-    internal class FlowerInteractive : IRoleInteractive
+    public class FlowerInteractive : IRoleInteractive
     {
         public Role Get(int id)
         {

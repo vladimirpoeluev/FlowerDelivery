@@ -7,23 +7,39 @@
 @using MigrationDataBase.Records
 @model Order[]
 <div class="form-entrance">
-    @foreach (Order order in Model)
-    {
-        <div class="card">
-            <div class="image-card">
-                <img alt="Карта заказа" src="#" />
-            </div>
-            <div class="card-descrip">
-                <b>@order.Id</b>
-                <p>
-                    Адрес магазина
-                    @(order.AddressShop?.Name ?? "Не назначен")
-                </p>
-                <p>
-                    Адрес клиента
-                    @order.Client.Address.Name
-                </p>
-            </div>
+    
+    <div>
+        <div>
+            <a asp-action="AddOrder">Добавить заказ</a>
         </div>
-    }
+        @foreach (Order order in Model)
+        {
+            <div class="card">
+                <div class="image-card">
+                    <img alt="Карта заказа" src="https://st.dg-home.ru/pic/932172/kartina_tsvetok_75h4h75sm__1__.jpg" />
+                </div>
+                <div class="card-descrip">
+                   
+                    <b>@order.Id</b>
+                    <p>
+                        Стаус: @order.OrderStatus.Name
+                    </p>
+                    <p>
+                        Фловер: @(order?.Flower?.User.Name ?? "Неназначен")
+                    </p>
+                    <p>
+                        Адрес магазина:
+                        @order?.AddressShop.Name
+                    </p>
+                    
+                    <p>
+                        Адрес клиента:
+                        @order?.Client.Address.Name
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+
+    
 </div>
