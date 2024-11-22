@@ -10,6 +10,4 @@
 ## Об авторе
 Автором данной работы является Владимир Поелуев.
 
-GitHub: https://github.com/vladimirpoeluev
-
 Email: poeluev.vladimir@gmail.com
